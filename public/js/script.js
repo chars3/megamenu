@@ -14,6 +14,33 @@ window.addEventListener("scroll", function () {
   }
 });
 
+//togle menu itens
+function toggleSubmenu(event, element) {
+  event.preventDefault();
+
+  // Fecha todos os submenus abertos, exceto o atual
+  document.querySelectorAll(".menu-itens li").forEach((item) => {
+    if (item !== element.parentElement) {
+      item.classList.remove("is-open");
+    }
+  });
+
+  // Alterna o submenu do item clicado
+  const parentLi = element.parentElement;
+  parentLi.classList.toggle("is-open");
+}
+
+// Fecha o submenu ao clicar fora dele no menu desktop
+document.addEventListener("click", function (event) {
+  const isClickInsideMenu = event.target.closest(".menu-itens li");
+
+  if (!isClickInsideMenu) {
+    document.querySelectorAll(".menu-itens li.is-open").forEach((item) => {
+      item.classList.remove("is-open");
+    });
+  }
+});
+
 function openMobileMenu() {
   navMobile.classList.add("animate__slideInRight");
   navMobile.style.display = "block";
