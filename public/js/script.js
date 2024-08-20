@@ -199,42 +199,12 @@ Ao clicar em submenu-mobile-header:
 */
 
 // Lida com o menu principal e o submenu interno
-// Para o menu externo (Produtos)
-document.querySelectorAll(".submenu-mobile-header").forEach((header, index) => {
-  header.addEventListener("click", () => {
-    const submenu = header.nextElementSibling; // Seleciona o próximo elemento, que é o submenu
+function toggleMenu(event) {
+  event.stopPropagation(); // Impede que o clique afete elementos pais
 
-    // Verifica se o submenu contém um submenu interno
-    const hasInternalHeader = submenu.querySelector(
-      ".submenu-mobile-header_interno"
-    );
+  const header = event.currentTarget;
+  const submenu = header.nextElementSibling;
 
-    if (hasInternalHeader) {
-      // Se houver um submenu interno, apenas alterna o submenu externo
-      if (submenu.classList.contains("submenu-open")) {
-        submenu.classList.remove("submenu-open");
-      } else {
-        submenu.classList.add("submenu-open");
-      }
-    } else {
-      // Se não houver submenu interno, expande diretamente o submenu
-      if (submenu.classList.contains("submenu-open")) {
-        submenu.classList.remove("submenu-open");
-      } else {
-        submenu.classList.add("submenu-open");
-      }
-    }
-  });
-});
-
-// Lida com os submenus internos, caso existam
-document
-  .querySelectorAll(".submenu-mobile-header_interno")
-  .forEach((header) => {
-    header.addEventListener("click", () => {
-      const submenuInterno = header.nextElementSibling;
-
-      // Alterna a exibição do submenu interno
-      submenuInterno.classList.toggle("submenu-open");
-    });
-  });
+  // Alterna a exibição do submenu clicado
+  submenu.classList.toggle("submenu-open");
+}

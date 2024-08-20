@@ -461,7 +461,6 @@ a.active {
     display: flex;
     justify-content: space-between;
     padding: 16px;
-    border-bottom: 1px solid #E1E9F4;
   }
   .submenu-mobile-active {
     max-height: 1000px;
@@ -475,7 +474,6 @@ a.active {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.8s ease-out;
-    border-bottom: 1px solid #E1E9F4;
   }
   .submenu-mobile.submenu-open {
     max-height: 1000px; /* Ajuste para um valor suficiente para o conteúdo completo */
@@ -513,7 +511,8 @@ a.active {
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 1px solid #E1E9F4;
+    border-top: 1px solid #E1E9F4;
+    border-bottom: none; /* Desativa a borda inferior padrão */
   }
   .submenu-mobile_content .submenu-container-interno .submenu-item_interno img {
     width: 24px;
