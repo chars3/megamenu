@@ -18,16 +18,38 @@ window.addEventListener("scroll", function () {
 function toggleSubmenu(event, element) {
   event.preventDefault();
 
-  // Fecha todos os submenus abertos, exceto o atual
+  const parentLi = element.parentElement;
+  const iconDown = element.querySelector(".fa-angle-down");
+  const iconUp = element.querySelector(".fa-angle-up");
+
+  // Verifica se o submenu está atualmente aberto
+  const isOpen = parentLi.classList.contains("is-open");
+
+  // Fecha todos os submenus abertos e reseta as setas e cores
   document.querySelectorAll(".menu-itens li").forEach((item) => {
-    if (item !== element.parentElement) {
-      item.classList.remove("is-open");
+    item.classList.remove("is-open");
+    const itemLink = item.querySelector(".menu-link");
+    if (itemLink) {
+      const itemIconDown = itemLink.querySelector(".fa-angle-down");
+      const itemIconUp = itemLink.querySelector(".fa-angle-up");
+      itemIconDown.style.display = "inline";
+      itemIconUp.style.display = "none";
+      itemLink.style.color = ""; // Reseta a cor do texto
     }
   });
 
-  // Alterna o submenu do item clicado
-  const parentLi = element.parentElement;
-  parentLi.classList.toggle("is-open");
+  // Se o submenu não estava aberto, abre o submenu clicado e ajusta a seta e cor
+  if (!isOpen) {
+    parentLi.classList.add("is-open");
+    iconDown.style.display = "none";
+    iconUp.style.display = "inline";
+    element.style.color = "#3057F2"; // Ajusta a cor do texto quando o submenu está aberto
+  } else {
+    // Se estava aberto, ele será fechado e as setas serão ressetadas
+    iconDown.style.display = "inline";
+    iconUp.style.display = "none";
+    element.style.color = ""; // Reseta a cor do texto
+  }
 }
 
 // Fecha o submenu ao clicar fora dele no menu desktop
@@ -207,4 +229,7 @@ function toggleMenu(event) {
 
   // Alterna a exibição do submenu clicado
   submenu.classList.toggle("submenu-open");
+
+  // Alterna a classe 'menu-open' no header
+  header.classList.toggle("menu-open");
 }

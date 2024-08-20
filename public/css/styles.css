@@ -315,10 +315,10 @@ a.active {
   display: inline-block;
   margin-left: 5px;
 }
-.c-icon i {
+.c-icon .fa-angle-up {
   display: none;
 }
-.c-icon i.fa-angle-down {
+.c-icon .fa-angle-up.fa-angle-down {
   display: inline;
 }
 
@@ -331,7 +331,7 @@ a.active {
 }
 
 .c-nav-mobile {
-  display: flex !important;
+  display: none;
 }
 
 .submenu-img {
@@ -608,6 +608,57 @@ a.active {
   .demo {
     display: none;
   }
+}
+/* Estilo para cabeçalhos de menus principais e submenus internos */
+.submenu-mobile-header,
+.submenu-mobile-header_interno {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.submenu-mobile-header .c-icon i.fa-angle-up,
+.submenu-mobile-header_interno .c-icon i.fa-angle-up {
+  display: none; /* Oculta o ícone de seta para cima por padrão */
+}
+
+.submenu-mobile-header .c-icon i.fa-angle-down,
+.submenu-mobile-header_interno .c-icon i.fa-angle-down {
+  display: inline; /* Mostra o ícone de seta para baixo por padrão */
+}
+
+/* Estilos quando o menu está aberto */
+.submenu-mobile-header.menu-open,
+.submenu-mobile-header_interno.menu-open {
+  color: #3057F2; /* Muda a cor do texto quando o menu está aberto */
+}
+
+.submenu-mobile-header.menu-open .c-icon i.fa-angle-up,
+.submenu-mobile-header_interno.menu-open .c-icon i.fa-angle-up {
+  display: inline; /* Mostra o ícone de seta para cima quando o menu está aberto */
+}
+
+.submenu-mobile-header.menu-open .c-icon i.fa-angle-down,
+.submenu-mobile-header_interno.menu-open .c-icon i.fa-angle-down {
+  display: none; /* Oculta o ícone de seta para baixo quando o menu está aberto */
+}
+
+.menu-link {
+  cursor: pointer;
+}
+
+.menu-link .fa-angle-up {
+  display: none; /* Esconde o ícone de seta para cima por padrão */
+}
+
+.menu-itens li.is-open .fa-angle-up {
+  display: inline; /* Mostra a seta para cima quando o submenu está aberto */
+}
+
+.menu-itens li.is-open .fa-angle-down {
+  display: none; /* Esconde a seta para baixo quando o submenu está aberto */
 }
 
 /*# sourceMappingURL=styles.css.map */
