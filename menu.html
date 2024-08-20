@@ -1,0 +1,1257 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+<style>
+  /*Desabilita o scroll horizontal*/
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .scrolled {
+    box-shadow: 0px 12px 24px 0px rgba(18, 38, 63, 0.03);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a.active {
+    color: #3057f2 !important;
+    font-weight: bold;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .is-blue {
+    color: #3333ff;
+    font-weight: 600;
+  }
+
+  .c-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff !important;
+    z-index: 999;
+    height: 80px;
+    position: fixed;
+  }
+
+  .c-menu {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.3s;
+  }
+
+  .container-menu {
+    display: flex;
+  }
+
+  .menu-itens {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .menu-itens li {
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-family: Montserrat;
+  }
+
+  .c-logo {
+    margin-right: 24px;
+  }
+
+  .c-logo img {
+    display: none;
+  }
+
+  .c-logo img.default {
+    display: block;
+  }
+
+  .submenu {
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px 10px;
+    min-width: 224px;
+    box-shadow: 0px 4px 18px 0px rgba(34, 54, 77, 0.25);
+    transition: opacity 0.3s ease-in-out, visibility 0.2s ease-in-out;
+  }
+
+  .menu-itens li:hover .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-itens li a {
+    color: #1b1b2b;
+  }
+
+  .menu-itens li a:hover {
+    color: blue;
+  }
+
+  .menu-itens li:hover::after {
+    bottom: -80px;
+  }
+
+  .login {
+    color: blue;
+  }
+
+  .demo {
+    background: #3057f2;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .submenu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .submenu-content span {
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: none;
+    margin: 0;
+  }
+
+  .submenu-text {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+    text-wrap: nowrap;
+  }
+
+  .submenu-text:hover {
+    background-color: #e1e9f4;
+    border-radius: 10px;
+  }
+
+  #submenu {
+    display: none;
+  }
+
+  .c-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    background: #babec3;
+    padding: 3px 70px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 20px;
+    color: #1b1b2b;
+  }
+
+  .c-icon {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .c-icon i {
+    display: none;
+  }
+
+  .c-icon .fa-angle-down {
+    display: inline;
+  }
+
+  .menu-itens li:hover {
+    color: #3057f2;
+  }
+
+  .c-icon-bars {
+    display: none;
+  }
+
+  .menu-mobile,
+  .c-button-mobile {
+    display: none;
+  }
+
+  .c-nav-mobile {
+    display: none;
+  }
+
+  .submenu-img {
+    width: 40px;
+  }
+
+  .menu-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    display: flex;
+    gap: 40px;
+  }
+
+  .menu-buttons .demo div {
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-buttons .demo div:hover {
+    background: rgba(48, 87, 242, 1) !important;
+  }
+
+  .mobile-buttons {
+    display: none;
+  }
+
+  #scrollToTopButton {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    bottom: 90px;
+    right: 80px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #ffbd00;
+    box-shadow: 0px 4px 18px 0px rgba(34, 54, 77, 0.25);
+    color: #373753;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 40px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 1240px) {
+    .c-container {
+      box-shadow: 0px 12px 24px 0px rgba(18, 38, 63, 0.03);
+    }
+
+    .c-nav-mobile {
+      background: #fff;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 110px);
+      display: none;
+      z-index: 999;
+      overflow-y: auto;
+    }
+
+    .scrollable-content {
+      flex-grow: 1;
+      padding-bottom: 112px;
+    }
+
+    .menu-mobile > li > .submenu-mobile {
+      display: none;
+    }
+
+    .c-logo {
+      margin-right: 10px;
+    }
+
+    .menu-buttons {
+      gap: 20px;
+    }
+
+    .login {
+      display: none;
+    }
+
+    .demo {
+      display: none;
+    }
+
+    .menu-itens {
+      display: none;
+    }
+
+    .menu-mobile {
+      background: #fff;
+      list-style: none;
+      padding: 0px 0px 30px 0px;
+      display: flex;
+      flex-direction: column;
+      /*justify-content: center;*/
+      align-items: center;
+      width: 100%;
+      overflow-y: auto;
+    }
+
+    .menu-mobile li {
+      font-size: 20px;
+      border: 1px solid #e1e9f4;
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .menu-mobile li:last-child {
+      border-bottom: none;
+    }
+
+    .menu-mobile a {
+      font-size: 24px;
+      font-weight: 400;
+      color: #1b1b2b;
+      margin: 0;
+    }
+
+    .menu-mobile li a span {
+      font-size: 20px;
+    }
+
+    .c-icon-bars {
+      display: inline;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .menu-mobile,
+    .c-button-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .submenu-mobile {
+      background: #fff;
+      /*width: 338px;*/
+      margin: 0 auto 0 auto;
+      border-radius: 14px;
+      /*padding: 20px;*/
+      display: none;
+      opacity: 0; /* Inicia escondido */
+      transform: translateY(-20px);
+    }
+
+    .submenu-mobile img {
+      width: 40px;
+    }
+
+    .submenu-mobile h3 {
+      font-size: 24px;
+      cursor: pointer;
+      color: #3333ff;
+    }
+
+    .submenu-text {
+      text-wrap: wrap;
+    }
+
+    .submenu-text span {
+      font-size: 18px;
+    }
+
+    .menu-buttons-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-buttons {
+      position: fixed;
+      padding: 10px;
+      bottom: 0;
+      left: 0;
+      display: none;
+      /*flex-direction: column;*/
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0px 4px 18px 0px rgba(34, 54, 77, 0.12);
+      z-index: 9999;
+    }
+
+    .mobile-buttons a {
+      display: inline-block;
+      margin: 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+
+    .animate__fadeOut {
+      animation: fadeOut 0.3s ease forwards;
+    }
+
+    .animate__fadeIn {
+      animation: fadeIn 0.3s ease forwards;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .c-menu {
+      height: 60px;
+    }
+
+    #scrollToTopButton {
+      right: 60px;
+      bottom: 60px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .submenu-mobile {
+      width: 100%;
+    }
+
+    #scrollToTopButton {
+      right: 30px;
+      bottom: 30px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .demo {
+      display: none;
+    }
+  }
+</style>
+
+<div class="c-menu">
+  <div class="container-menu">
+    <a href="https://3cplusnow.com/">
+      <div class="c-logo">
+        <img
+          src="https://3cplusnow.com/wp-content/uploads/2024/01/logo-3C.svg"
+          width="70"
+          alt="Logo"
+          class="default"
+        />
+      </div>
+      <!--<div class="c-logo">-->
+      <!--    <img src="https://3cplusnow.com/wp-content/uploads/2024/05/Group-48095429.svg" width="80" alt="Logo 3C Plus 10 anos"-->
+      <!--        class="default">-->
+
+      <!--</div>-->
+    </a>
+
+    <!--MENU DESKTOP-->
+    <ul class="menu-itens">
+      <!-- Soluções -->
+      <li>
+        Soluções
+        <span class="c-icon">
+          <i class="fa fa-angle-down"></i>
+          <i class="fa fa-angle-up"></i>
+        </span>
+        <div class="submenu">
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="#">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Prospecção</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <div class="submenu-content">
+            <a
+              class="submenu-link"
+              href="https://3cplusnow.com/atendimento-e-suporte/"
+            >
+              <div class="submenu-text">
+                <span>Atendimento e Suporte</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/cobranca/">
+              <div class="submenu-text">
+                <span>Cobrança</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/vendas/">
+              <div class="submenu-text">
+                <span>Vendas</span>
+              </div>
+            </a>
+          </div>
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Call Centers</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Correspondentes Bancários</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Educação</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Outros</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+        </div>
+      </li>
+      <!-- Funcionalidades -->
+      <li>
+        Funcionalidades
+        <span class="c-icon">
+          <i class="fa fa-angle-down"></i>
+          <i class="fa fa-angle-up"></i>
+        </span>
+        <div class="submenu">
+          <div class="submenu-content">
+            <a
+              class="submenu-link"
+              href="https://3cplusnow.com/pt/api-oficial-do-whatsapp/"
+            >
+              <div class="submenu-text">
+                <span>API oficial do WhatsApp</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/chatbot/">
+              <div class="submenu-text">
+                <span>Chatbot</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/discador">
+              <div class="submenu-text">
+                <span>Discador Automático</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/insights-ia/">
+              <div class="submenu-text">
+                <span>Insights IA</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/omnichannel">
+              <div class="submenu-text">
+                <span>Omnichannel</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/pabx">
+              <div class="submenu-text">
+                <span>PABX</span>
+              </div>
+            </a>
+          </div>
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>CRM</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/receptivo">
+              <div class="submenu-text">
+                <span>Receptivo</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content" hidden>
+            <a class="submenu-link" href="https://3cplusnow.com/sms/">
+              <div class="submenu-text">
+                <span>SMS</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <!-- Produto -->
+      <li hidden>
+        Produto
+        <span class="c-icon">
+          <i class="fa fa-angle-down"></i>
+          <i class="fa fa-angle-up"></i>
+        </span>
+        <div class="submenu">
+          <div class="submenu-content">
+            <a class="submenu-link" href="#">
+              <div class="submenu-text">
+                <span>Vídeos Demonstrativos</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="#">
+              <div class="submenu-text">
+                <span>Integração</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="">
+              <div class="submenu-text">
+                <span>Atualizações do Produto</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="">
+              <div class="submenu-text">
+                <span>Desenvolvedores</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <!-- Preços -->
+      <!--<li>-->
+      <!--    <a href="#"><span>Preços</span></a>-->
+      <!--</li>-->
+      <!-- A 3C+ -->
+      <li>
+        A 3C+
+        <span class="c-icon">
+          <i class="fa fa-angle-down"></i>
+          <i class="fa fa-angle-up"></i>
+        </span>
+        <div class="submenu">
+          <div class="submenu-content">
+            <a
+              target="_blank"
+              class="submenu-link"
+              href="https://instituto3c.com.br/"
+            >
+              <div class="submenu-text">
+                <span>Instituto 3C+</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a
+              class="submenu-link"
+              href="https://3cplusnow.com/materiais-gratuitos/"
+            >
+              <div class="submenu-text">
+                <span>Materiais Gratuitos</span>
+              </div>
+            </a>
+          </div>
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Em Foco</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/quem-somos">
+              <div class="submenu-text">
+                <span>Quem Somos</span>
+              </div>
+            </a>
+          </div>
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>FAQ</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Contato</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Redes Sociais</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+        </div>
+      </li>
+      <!-- Parceiro -->
+      <li>
+        <a href="https://3cplusnow.com/partner/"
+          ><span>Seja um parceiro</span></a
+        >
+      </li>
+      <!-- Blog -->
+      <li>
+        <a href="https://3cplusnow.com/blog/"><span>Blog</span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="menu-buttons">
+    <a target="_blank" href="https://app.3c.plus/" class="login">
+      <img
+        src="https://3cplusnow.com/wp-content/uploads/2024/02/square-kanban-1.png"
+      />
+      Entrar</a
+    >
+    <a onclick="isFormPresent()" class="demo">
+      <div
+        style="
+          background: #3057f2;
+          color: #fff;
+          padding: 12px 24px;
+          border-radius: 10px;
+          font-size: 14px;
+        "
+      >
+        <span>Fale com um especialista</span>
+      </div>
+    </a>
+    <div class="c-icon-bars">
+      <img
+        onclick="openMobileMenu()"
+        style="width: 24px"
+        src="https://3cplusnow.com/wp-content/uploads/2024/02/bars.svg"
+        class="fas fa-bars"
+      />
+      <img
+        onclick="closeMobileMenu()"
+        src="https://3cplusnow.com/wp-content/uploads/2024/02/times.svg"
+        class="fas fa-times"
+        style="display: none; width: 20px"
+      />
+    </div>
+  </div>
+
+  <!--END MENU DESKTOP-->
+</div>
+
+<!--Menu Mobile-->
+<div class="c-nav-mobile animate__animated animate__faster">
+  <div class="scrollable-content">
+    <ul class="menu-mobile">
+      <!-- Soluções -->
+      <li>
+        Soluções
+        <span class="c-icon">
+          <i class="fas fa-angle-down"></i>
+          <i class="fas fa-angle-up"></i>
+        </span>
+        <div class="submenu-mobile">
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/cobranca/">
+              <div class="submenu-text">
+                <span>Cobrança</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a
+              class="submenu-link"
+              href="https://3cplusnow.com/atendimento-e-suporte/"
+            >
+              <div class="submenu-text">
+                <span>Atendimento e Suporte</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/vendas/">
+              <div class="submenu-text">
+                <span>Vendas</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <!-- Funcionalidades -->
+      <li>
+        Funcionalidades
+        <span class="c-icon">
+          <i class="fas fa-angle-down"></i>
+          <i class="fas fa-angle-up"></i>
+        </span>
+        <div class="submenu-mobile">
+          <div class="submenu-content">
+            <a
+              class="submenu-link"
+              href="https://3cplusnow.com/api-oficial-do-whatsapp/"
+            >
+              <div class="submenu-text">
+                <span>API oficial do WhatsApp</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/chatbot/">
+              <div class="submenu-text">
+                <span>Chatbot</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/discador">
+              <div class="submenu-text">
+                <span>Discador Automático</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/insights-ia/">
+              <div class="submenu-text">
+                <span>Insights IA</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/omnichannel">
+              <div class="submenu-text">
+                <span>Omnichannel</span>
+              </div>
+            </a>
+          </div>
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>CRM</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/receptivo">
+              <div class="submenu-text">
+                <span>Receptivo</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content" hidden>
+            <a class="submenu-link" href="https://3cplusnow.com/sms/">
+              <div class="submenu-text">
+                <span>SMS</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <!-- Produto -->
+      <li hidden>
+        Produto
+        <span class="c-icon">
+          <i class="fas fa-angle-down"></i>
+          <i class="fas fa-angle-up"></i>
+        </span>
+        <div class="submenu-mobile">
+          <div class="submenu-content">
+            <a class="submenu-link" href="#">
+              <div class="submenu-text">
+                <span>Vídeos Demonstrativos</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="#">
+              <div class="submenu-text">
+                <span>Integração</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="">
+              <div class="submenu-text">
+                <span>Atualizações do Produto</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="">
+              <div class="submenu-text">
+                <span>Desenvolvedores</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <!-- Preços -->
+      <!--<li>-->
+      <!--    <a href="#"><span>Preços</span></a>-->
+      <!--</li>-->
+      <!-- A 3C+ -->
+      <li>
+        A 3C+
+        <span class="c-icon">
+          <i class="fas fa-angle-down"></i>
+          <i class="fas fa-angle-up"></i>
+        </span>
+        <div class="submenu-mobile">
+          <div class="submenu-content">
+            <a
+              target="_blank"
+              class="submenu-link"
+              href="https://instituto3c.com.br/"
+            >
+              <div class="submenu-text">
+                <span>Instituto 3C+</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu-content">
+            <a
+              class="submenu-link"
+              href="https://3cplusnow.com/materiais-gratuitos/"
+            >
+              <div class="submenu-text">
+                <span>Materiais Gratuitos</span>
+              </div>
+            </a>
+          </div>
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Em Foco</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <div class="submenu-content">
+            <a class="submenu-link" href="https://3cplusnow.com/quem-somos">
+              <div class="submenu-text">
+                <span>Quem Somos</span>
+              </div>
+            </a>
+          </div>
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>FAQ</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Contato</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+
+          <!--<div class="submenu-content">-->
+          <!--    <a class="submenu-link" href="">-->
+          <!--        <div class="submenu-text">-->
+          <!--            <span>Redes Sociais</span>-->
+          <!--        </div>-->
+          <!--    </a>-->
+          <!--</div>-->
+        </div>
+      </li>
+      <!-- Parceiro -->
+      <li>
+        <a href="https://3cplusnow.com/partner/"
+          ><span>Seja um parceiro</span></a
+        >
+      </li>
+      <!-- Blog -->
+      <li>
+        <a href="https://3cplusnow.com/blog/"><span>Blog</span></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="mobile-buttons">
+  <div class="menu-buttons-mobile">
+    <a
+      target="_blank"
+      href="https://app.3c.plus/"
+      class="login"
+      style="color: #3057f2"
+    >
+      <img
+        src="https://3cplusnow.com/wp-content/uploads/2024/02/square-kanban-1.png"
+      />
+      Entrar</a
+    >
+    <a onclick="isFormPresent()" class="demo">
+      <div
+        style="
+          background: #3057f2;
+          color: #fff;
+          padding: 12px 24px;
+          border-radius: 10px;
+          font-size: 14px;
+        "
+      >
+        <span>Fale com um especialista</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!--<button id="scrollToTopButton" style="display: none;" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i>-->
+<!--</button>-->
+
+<script>
+  const iconBars = document.querySelector(".fa-bars");
+  const iconTimes = document.querySelector(".fa-times");
+
+  const navMobile = document.querySelector(".c-nav-mobile");
+  const customContainer = document.querySelector(".c-header-container");
+  const mobileButtons = document.querySelector(".mobile-buttons"); // Seleciona a div mobile-buttons
+
+  window.addEventListener("scroll", function () {
+    var container = document.querySelector(".c-header-container");
+    if (window.scrollY > 0) {
+      container.classList.add("scrolled");
+    } else {
+      container.classList.remove("scrolled");
+    }
+  });
+
+  function openMobileMenu() {
+    navMobile.classList.add("animate__slideInRight");
+    navMobile.style.display = "block";
+    navMobile.classList.remove("animate__slideOutRight");
+    iconBars.style.display = "none";
+    iconTimes.style.display = "block";
+    customContainer.style["boxShadow"] = "0 0 5px #999999";
+    mobileButtons.style.display = "block"; // Exibe a div mobile-buttons
+  }
+
+  function closeMobileMenu() {
+    navMobile.classList.add("animate__slideOutRight");
+    navMobile.classList.remove("animate__slideInLeft");
+    setTimeout(() => {
+      navMobile.style.display = "none";
+      iconBars.style.display = "block";
+      iconTimes.style.display = "none";
+      customContainer.style["boxShadow"] = "none";
+      mobileButtons.style.display = "none"; // Esconde a div mobile-buttons
+    }, 500); // Ajuste o tempo conforme a duração da animação
+  }
+
+  function isFormPresent() {
+    let hasForm = document.querySelector("#form-agendar-demo");
+    let demo = document.querySelectorAll(".demo");
+    if (!hasForm) {
+      demo.forEach((el) => {
+        el.setAttribute("href", "https://3cplusnow.com/#form-agendar-demo");
+      });
+    } else {
+      demo.forEach((el) => {
+        // el.setAttribute('href', '#form-agendar-demo');
+        var formContainer = document.getElementById("form-agendar-demo");
+        var navbarHeight = -280;
+
+        var formTop =
+          formContainer.getBoundingClientRect().top + window.scrollY;
+
+        // Ajustar a rolagem considerando a altura da navbar
+        window.scrollTo({
+          top:
+            formTop -
+            (window.innerHeight / 2 - formContainer.offsetHeight / 2) -
+            navbarHeight,
+          behavior: "smooth",
+        });
+      });
+    }
+    closeMobileMenu();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuItems = document.querySelectorAll(
+      ".c-nav-mobile .menu-mobile > li"
+    );
+
+    mobileMenuItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        // Fecha outros submenus abertos no menu mobile
+        mobileMenuItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            const otherSubmenu = otherItem.querySelector(".submenu-mobile");
+            if (otherSubmenu && otherSubmenu.style.display !== "none") {
+              otherSubmenu.classList.add("animate__fadeOut"); // Adiciona a animação de fade out
+              setTimeout(() => {
+                otherSubmenu.style.display = "none";
+                otherSubmenu.classList.remove(
+                  "animate__fadeIn",
+                  "animate__fadeOut"
+                ); // Remove as animações para resetar o estado
+              }, 500); // Deve coincidir com a duração da animação
+            }
+            otherItem.classList.remove("is-active");
+          }
+        });
+
+        // Abre ou fecha o submenu do item clicado no menu mobile
+        const submenu = item.querySelector(".submenu-mobile");
+        if (submenu) {
+          if (
+            submenu.style.display === "none" ||
+            submenu.style.display === ""
+          ) {
+            submenu.style.display = "block"; // Mostra o submenu
+            submenu.classList.remove("animate__fadeOut"); // Garante que a animação de fechar não seja aplicada
+            submenu.classList.add("animate__fadeIn"); // Adiciona a animação de fade in
+          } else {
+            submenu.classList.replace("animate__fadeIn", "animate__fadeOut"); // Substitui fade in por fade out
+            setTimeout(() => {
+              submenu.style.display = "none"; // Esconde o submenu após a animação
+            }, 300); // Deve coincidir com a duração da animação
+          }
+        }
+      });
+    });
+
+    function normalizeUrl(url) {
+      var urlObject = new URL(url);
+      return urlObject.origin + urlObject.pathname;
+    }
+
+    let currentUrl = normalizeUrl(window.location.href);
+    let links = document.querySelectorAll(".menu-link");
+
+    links.forEach(function (link) {
+      link.classList.remove("active");
+      let linkUrl = normalizeUrl(link.href);
+
+      if (currentUrl === linkUrl) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Quando o usuário rolar para baixo 20px do topo do documento, mostrar o botão
+  // window.onscroll = function() {scrollFunction()};
+
+  // function scrollFunction() {
+  //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //         document.getElementById("scrollToTopButton").style.display = "block";
+  //     } else {
+  //         document.getElementById("scrollToTopButton").style.display = "none";
+  //     }
+  // }
+
+  // function scrollToTop() {
+  //     window.scrollTo({
+  //         top: 0,
+  //         behavior: 'smooth'
+  //     });
+  // }
+
+  let demoButton = document.querySelector(".demo");
+
+  demoButton.addEventListener("click", () => {
+    var formContainer = document.getElementById("form-agendar-demo");
+    var navbarHeight = -280;
+
+    var formTop = formContainer.getBoundingClientRect().top + window.scrollY;
+
+    // Ajustar a rolagem considerando a altura da navbar
+    window.scrollTo({
+      top:
+        formTop -
+        (window.innerHeight / 2 - formContainer.offsetHeight / 2) -
+        navbarHeight,
+      behavior: "smooth",
+    });
+  });
+</script>

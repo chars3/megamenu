@@ -123,32 +123,33 @@ document.addEventListener("DOMContentLoaded", function () {
           submenu.style.display = "block"; // Mostra o submenu
           submenu.classList.remove("animate__fadeOut"); // Garante que a animação de fechar não seja aplicada
           submenu.classList.add("animate__fadeIn"); // Adiciona a animação de fade in
-        } else {
-          submenu.classList.replace("animate__fadeIn", "animate__fadeOut"); // Substitui fade in por fade out
-          setTimeout(() => {
-            submenu.style.display = "none"; // Esconde o submenu após a animação
-          }, 300); // Deve coincidir com a duração da animação
         }
+        //  else {
+        //   submenu.classList.replace("animate__fadeIn", "animate__fadeOut"); // Substitui fade in por fade out
+        //   setTimeout(() => {
+        //     submenu.style.display = "none"; // Esconde o submenu após a animação
+        //   }, 300); // Deve coincidir com a duração da animação
+        // }
       }
     });
   });
 
-  function normalizeUrl(url) {
-    var urlObject = new URL(url);
-    return urlObject.origin + urlObject.pathname;
-  }
+  // function normalizeUrl(url) {
+  //   var urlObject = new URL(url);
+  //   return urlObject.origin + urlObject.pathname;
+  // }
 
-  let currentUrl = normalizeUrl(window.location.href);
-  let links = document.querySelectorAll(".menu-link");
+  // let currentUrl = normalizeUrl(window.location.href);
+  // let links = document.querySelectorAll(".menu-link");
 
-  links.forEach(function (link) {
-    link.classList.remove("active");
-    let linkUrl = normalizeUrl(link.href);
+  // links.forEach(function (link) {
+  //   link.classList.remove("active");
+  //   let linkUrl = normalizeUrl(link.href);
 
-    if (currentUrl === linkUrl) {
-      link.classList.add("active");
-    }
-  });
+  //   if (currentUrl === linkUrl) {
+  //     link.classList.add("active");
+  //   }
+  // });
 });
 
 // Quando o usuário rolar para baixo 20px do topo do documento, mostrar o botão
@@ -186,3 +187,54 @@ demoButton.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+/* 
+Ao clicar em submenu-mobile-header:
+  - mostrar/esconder submenu-mobile-header_interno
+
+  Ao clicar em submenu-mobile-header_interno:
+  - mostrar/esconder submenu-mobile_interno
+
+
+*/
+
+// Lida com o menu principal e o submenu interno
+// Para o menu externo (Produtos)
+document.querySelectorAll(".submenu-mobile-header").forEach((header, index) => {
+  header.addEventListener("click", () => {
+    const submenu = header.nextElementSibling; // Seleciona o próximo elemento, que é o submenu
+
+    // Verifica se o submenu contém um submenu interno
+    const hasInternalHeader = submenu.querySelector(
+      ".submenu-mobile-header_interno"
+    );
+
+    if (hasInternalHeader) {
+      // Se houver um submenu interno, apenas alterna o submenu externo
+      if (submenu.classList.contains("submenu-open")) {
+        submenu.classList.remove("submenu-open");
+      } else {
+        submenu.classList.add("submenu-open");
+      }
+    } else {
+      // Se não houver submenu interno, expande diretamente o submenu
+      if (submenu.classList.contains("submenu-open")) {
+        submenu.classList.remove("submenu-open");
+      } else {
+        submenu.classList.add("submenu-open");
+      }
+    }
+  });
+});
+
+// Lida com os submenus internos, caso existam
+document
+  .querySelectorAll(".submenu-mobile-header_interno")
+  .forEach((header) => {
+    header.addEventListener("click", () => {
+      const submenuInterno = header.nextElementSibling;
+
+      // Alterna a exibição do submenu interno
+      submenuInterno.classList.toggle("submenu-open");
+    });
+  });

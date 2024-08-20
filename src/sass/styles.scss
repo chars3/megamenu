@@ -19,6 +19,8 @@ $text-tag-green: #015901;
 * {
   font-family: $font-icons;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
@@ -72,7 +74,6 @@ a {
   height: 80px;
   position: fixed;
   width: 100%;
-  border-bottom: solid 1px $link-color;
 }
 
 .c-menu {
@@ -156,7 +157,7 @@ a {
             gap: 16px;
             padding: 20px;
             width: 90%;
-            min-height: 100px;
+            min-height: 140px;
             // cursor: pointer;
             border-radius: 12px;
 
@@ -387,7 +388,7 @@ a {
 }
 
 .c-nav-mobile {
-  display: none;
+  display: flex !important; //mudar para none
 }
 
 .submenu-img {
@@ -435,200 +436,279 @@ a {
 
 @media (max-width: 1240px) {
   .c-container {
-    box-shadow: 0px 12px 24px 0px $shadow-light;
+      box-shadow: 0px 12px 24px 0px rgba(18, 38, 63, 0.03);
   }
 
+  .c-header-container{
+    padding: 0 20px;
+  }
+  
   .c-nav-mobile {
-    background: $background-light;
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 110px);
-    display: flex;
-    z-index: 999;
-    overflow-y: auto;
+      // background: #fff;
+      position: fixed; 
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 110px); 
+      display: none;
+      z-index: 99;
+      overflow-y: auto;
   }
-
+  
   .scrollable-content {
-    flex-grow: 1;
-    padding-bottom: 112px;
+      flex-grow: 1; 
+      padding-bottom: 112px;
   }
-
+  
   .menu-mobile > li > .submenu-mobile {
-    display: flex;
+      // display: none; 
   }
 
   .c-logo {
-    margin-right: 10px;
+      margin-right: 10px;
   }
 
   .menu-buttons {
-    gap: 20px;
+      gap: 20px;
   }
-
+  
   .login {
-    display: none;
+      display: none;
   }
-
+  
   .demo {
-    display: none;
+      display: none;
   }
 
   .menu-itens {
-    display: none;
+      display: none;
   }
 
   .menu-mobile {
-    background: $background-light;
-    list-style: none;
-    padding: 0 0 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    overflow-y: auto;
-
-    li {
-      font-size: 20px;
-      border: 1px solid $light-stroke;
+      background: #fff;
+      height: 400px;
+      list-style: none;
+      padding: 0px 0px 30px 0px;
+      display: flex;
+      flex-direction: column;
+      /*justify-content: center;*/
+      align-items: center;
       width: 100%;
-      padding: 10px;
+      overflow-y: auto;
+      margin-top: 80px;
+      z-index: 2;
+  }
+  
+  .menu-mobile li {
+      display: block;
+      justify-content: space-between;
+      font-size: 20px;
+      border: 1px solid #E1E9F4;
+      width: 100%;
       cursor: pointer;
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      a {
-        font-size: 24px;
-        font-weight: 400;
-        color: $link-color;
-        margin: 0;
-
-        span {
-          font-size: 20px;
-        }
-      }
-
-      .submenu-mobile {
-        background: $background-light;
-        margin: 0 auto;
-        border-radius: 14px;
-        display: none;
-        opacity: 0;
-        transform: translateY(-20px);
-
-        img {
-          width: 40px;
-        }
-
-        h3 {
-          font-size: 24px;
-          cursor: pointer;
-          color: $secondary-color;
-        }
-
-        .submenu-text {
-          white-space: normal;
-
-          span {
-            font-size: 18px;
-          }
-        }
-      }
-    }
+  }
+  
+  .menu-mobile li:last-child {
+      border-bottom: none;
   }
 
+  .menu-mobile a {
+      font-size: 24px;
+      font-weight: 400;
+      color: #1b1b2b;
+      margin: 0;
+  }
+  
+  .menu-mobile li a span {
+      font-size: 20px
+  }
+ 
   .c-icon-bars {
     display: inline;
     cursor: pointer;
     font-size: 20px;
+    z-index: 1000; 
+    position: relative; 
   }
 
-  .menu-mobile, .c-button-mobile {
+
+  .menu-mobile,
+  .c-button-mobile {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .submenu-mobile-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid $light-stroke;
   }
 
+  .submenu-mobile-active {
+    max-height: 1000px;
+  }
+
+  .submenu-mobile {
+      background: #fff;
+      /*width: 338px;*/
+      margin: 0 auto 0 auto;
+      border-radius: 14px;
+      /*padding: 20px;*/
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.8s ease-out;
+      
+      border-bottom: 1px solid $light-stroke;
+
+      &.submenu-open {
+        max-height: 1000px; /* Ajuste para um valor suficiente para o conteúdo completo */
+      }
+
+      &_content {
+        display: block;
+
+        & .submenu-mobile-header_interno {
+          display: flex;
+          background-color: #fff;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 16px 16px 32px;
+          border-bottom: 1px solid $light-stroke;
+
+          & .submenu-mobile_text {
+            & h3 {
+              color: $text-color;
+              font-size: 18px;
+              font-weight: 500;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        .submenu-container-interno {
+          background-color: #fff;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.8s ease-out;
+      
+          &.submenu-open {
+            max-height: 500px; /* Ajuste conforme necessário */
+          }
+      
+          .submenu-item_interno {
+              background-color: #fff;
+              padding: 16px 16px 16px 32px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              border-bottom: 1px solid $light-stroke;
+      
+              img {
+                  width: 24px;
+                  height: 24px;
+              }
+      
+              a {
+                  font-size: 16px !important;
+                  font-weight: 400 !important;
+                  color: $text-color !important;
+              }
+          }
+        }
+      }      
+  }
+
+  .submenu-mobile img {
+      width: 40px;
+  }
+
+  .submenu-mobile h3 {
+      font-size: 24px;
+      cursor: pointer;
+      color: #3333FF;
+  }
+  
+  .submenu-text {
+      text-wrap: wrap;
+  }
+  
+  .submenu-text span {
+      font-size: 18px;
+  }
+  
   .menu-buttons-mobile {
-    display: flex;
-    flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      
   }
-
+  
   .mobile-buttons {
-    position: fixed;
-    padding: 10px;
-    bottom: 0;
-    left: 0;
-    display: none;
-    width: 100%;
-    background-color: $background-light;
-    box-shadow: 0px 4px 18px 0px rgba(34, 54, 77, 0.12);
-    z-index: 9999;
-
-    a {
+      position: fixed;
+      padding: 10px;
+      bottom: 0;
+      left: 0; 
+      display: none;
+      /*flex-direction: column;*/
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0px 4px 18px 0px rgba(34, 54, 77, 0.12);
+      z-index: 9999;
+  }
+  
+  .mobile-buttons a {
       display: inline-block;
-      margin: 10px;
-      color: $background-light;
+      margin: 10px; 
+      color: #fff; 
       text-align: center;
-    }
   }
-
+  
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+}
+  
   @keyframes fadeOut {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-20px); }
   }
 
   .animate__fadeOut {
-    animation: fadeOut 0.3s ease forwards;
+      animation: fadeOut 0.3s ease forwards;
+  }
+  
+  .animate__fadeIn {
+      animation: fadeIn 0.3s ease forwards;
   }
 
-  .animate__fadeIn {
-    animation: fadeIn 0.3s ease forwards;
-  }
 }
 
 @media (max-width: 768px) {
   .c-menu {
-    height: 60px;
+      height: 60px;
   }
-
+  
   #scrollToTopButton {
-    right: 60px;
-    bottom: 60px;
+      right: 60px;
+      bottom: 60px;
   }
 }
 
 @media (max-width: 430px) {
   .submenu-mobile {
-    width: 100%;
+      width: 100%;
   }
-
+  
   #scrollToTopButton {
-    right: 30px;
-    bottom: 30px;
+      right: 30px;
+      bottom: 30px;
   }
 }
 
 @media (max-width: 360px) {
   .demo {
-    display: none;
+      display: none;
   }
+
 }
