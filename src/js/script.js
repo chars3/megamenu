@@ -222,14 +222,26 @@ Ao clicar em submenu-mobile-header:
 
 // Lida com o menu principal e o submenu interno
 function toggleMenu(event) {
-  event.stopPropagation(); // Impede que o clique afete elementos pais
+  // event.stopPropagation(); // Impede que o clique afete elementos pais
 
   const header = event.currentTarget;
   const submenu = header.nextElementSibling;
 
-  // Alterna a exibição do submenu clicado
-  submenu.classList.toggle("submenu-open");
+  // Verifica se o submenu clicado já está aberto
+  const isOpen = submenu.classList.contains("submenu-open");
 
-  // Alterna a classe 'menu-open' no header
-  header.classList.toggle("menu-open");
+  // Fecha todos os submenus antes de abrir o novo, garantindo que um novo clique funcione
+  document.querySelectorAll(".submenu-mobile").forEach((submenu) => {
+    submenu.classList.remove("submenu-open");
+  });
+
+  document.querySelectorAll(".submenu-mobile-header").forEach((header) => {
+    header.classList.remove("menu-open");
+  });
+
+  // Se o submenu não estava aberto, abre-o
+  if (!isOpen) {
+    submenu.classList.add("submenu-open");
+    header.classList.add("menu-open");
+  }
 }

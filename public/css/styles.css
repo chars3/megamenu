@@ -100,8 +100,8 @@ a.active {
   flex-direction: column;
   opacity: 0;
   visibility: hidden;
-  border-radius: 0 0 10px 10px;
-  justify-content: space-between;
+  border-radius: 10px;
+  justify-content: center;
   align-items: center;
   position: absolute;
   top: 80px;
@@ -110,14 +110,13 @@ a.active {
   background-color: #fff;
   padding: 20px 10px;
   width: 100%;
-  min-height: 600px;
+  max-height: 1300px;
   box-shadow: 0px 4px 18px 0px rgba(34, 54, 77, 0.25);
   transition: opacity 0.3s ease-in-out, visibility 0.2s ease-in-out;
-  z-index: 10;
 }
 .menu-itens li .submenu .submenu-container {
   display: flex;
-  max-width: 1400px;
+  width: 1230px;
   justify-content: space-between;
   padding-bottom: 20px;
   margin: 0 auto;
@@ -128,9 +127,6 @@ a.active {
 }
 .menu-itens li .submenu .submenu-container .submenu-content h3 {
   padding: 16px 0 0 0;
-  font-size: 20px !important;
-  font-weight: 600 !important;
-  color: #373753 !important;
 }
 .menu-itens li .submenu .submenu-container .submenu-content .submenu-item {
   display: flex;
@@ -157,7 +153,7 @@ a.active {
 }
 .menu-itens li .submenu .submenu-container .submenu-content .submenu-item_content .item-header h4 {
   font-size: 18px !important;
-  font-weight: 500 !important;
+  color: red !important;
 }
 .menu-itens li .submenu .submenu-container .submenu-content .submenu-item_content .item-header .tag-free {
   background-color: #C9F2CD;
@@ -191,24 +187,21 @@ a.active {
   flex-direction: column;
   margin-top: 24px;
   width: 100%;
-  max-width: 360px;
   min-height: 320px;
 }
-.menu-itens li .submenu .submenu-container .submenu-content .card .card-image {
-  border-radius: 10px !important;
-  overflow: hidden;
-  max-height: 112px;
+.menu-itens li .submenu .submenu-container .submenu-content .card img {
+  width: 100%;
 }
 .menu-itens li .submenu .submenu-container .submenu-content .card .card-title {
   text-align: left;
   margin-top: 16px;
 }
 .menu-itens li .submenu .submenu-container .submenu-content .card .card-title h3 {
-  padding: 0 !important;
-  font-size: 20px !important;
-  line-height: 32px !important;
-  font-weight: 400 !important;
-  color: #373753 !important;
+  padding: 0;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #373753;
 }
 .menu-itens li .submenu .submenu-container .submenu-content .card .card-link {
   margin-top: 24px;
@@ -233,20 +226,8 @@ a.active {
 .menu-itens li .submenu .submenu-container .partner {
   padding-left: 40px;
 }
-.menu-itens li .submenu .submenu-container .recursos {
-  width: 48%;
-}
 .menu-itens li .submenu .submenu-item:hover {
   background-color: #F0F4FA;
-}
-.menu-itens li .submenu a.chevron-link {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.menu-itens li .submenu a.chevron-link img {
-  width: 18px;
-  height: 18px;
 }
 .menu-itens li .submenu .submenu-footer {
   background-color: white;
@@ -287,24 +268,12 @@ a.active {
 
 .login {
   color: #3057F2;
-  font-size: 16px !important;
 }
 
 .demo {
   background: #3057F2;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.submenu-item_image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.submenu-item_image img {
-  width: 32px;
-  height: 32px;
 }
 
 .submenu-content {
@@ -367,7 +336,6 @@ a.active {
 
 .c-nav-mobile {
   display: none;
-  position: relative;
 }
 
 .submenu-img {
@@ -427,7 +395,6 @@ a.active {
     display: none;
     z-index: 99;
     overflow-y: auto;
-    background-color: #fff;
   }
   .scrollable-content {
     flex-grow: 1;
