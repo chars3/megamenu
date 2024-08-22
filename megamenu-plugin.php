@@ -28,9 +28,11 @@ function megamenu_enqueue_scripts()
 }
 add_action('wp_enqueue_scripts', 'megamenu_enqueue_scripts');
 
-// Função para adicionar o menu ao início do body
-function megamenu_add_to_body()
+// Função para adicionar o menu via shortcode
+function megamenu_shortcode()
 {
+  ob_start();
   include plugin_dir_path(__FILE__) . 'megamenu-template.php'; // Inclui o arquivo HTML do menu
+  return ob_get_clean();
 }
-add_action('wp_body_open', 'megamenu_add_to_body');
+add_shortcode('megamenu', 'megamenu_shortcode');
