@@ -76,6 +76,10 @@ a {
   width: 100%;
 }
 
+.c-header-container.submenu-open {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Box-shadow aplicado quando o submenu está aberto */
+}
+
 .c-menu {
   height: 50px;
   display: flex;
@@ -133,7 +137,7 @@ a {
       padding: 20px 10px;
       width: 100%;
       min-height: 600px;
-      box-shadow: 0px 4px 18px 0px $shadow-dark;
+      box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.15); /* Ajuste aqui */
       transition: opacity 0.3s ease-in-out, visibility 0.2s ease-in-out;
       z-index: 10;
 
