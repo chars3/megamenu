@@ -44,7 +44,7 @@
                   class="submenu-item">
 
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon.png'; ?>" alt="Icon" />
                   </div>
 
                   <div class="submenu-item_content">
@@ -63,7 +63,7 @@
                   href="https://3cplusnow.com/pt/pabx/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-pabx.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu//' . 'src/assets/icon-pabx.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -80,7 +80,7 @@
                   href="https://3cplusnow.com/pt/receptivo/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-receptivo.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-receptivo.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -103,7 +103,7 @@
                   href="https://3cplusnow.com/pt/sms/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-sms.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-sms.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -120,7 +120,7 @@
                   href="https://3cplusnow.com/pt/omnichannel/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-omnichannel.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-omnichannel.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -138,7 +138,7 @@
                   href="https://3cplusnow.com/pt/chatbot/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-chatbot.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-chatbot.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -163,7 +163,7 @@
                   href="https://3cplusnow.com/pt/insights-ia/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-ia.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-ia.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -183,12 +183,12 @@
             </div>
             <div class="submenu-footer">
               <div class="submenu-footer_contact">
-                <a class="chevron-link" href="">Contate o suporte <img width="18px" height="18px" src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
+                <a class="chevron-link" href="https://help.3cplus.com.br/pt-BR/">Contate o suporte <img width="18px" height="18px" src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
               </div>
-              <div class="submenu-footer_links">
+              <!-- <div class="submenu-footer_links">
                 <a href="">Atualização do produto</a>
                 <a href="">Desenvolvedores</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </li>
@@ -209,7 +209,7 @@
                   href="https://3cplusnow.com/pt/vendas/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-vendas.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-vendas.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -226,7 +226,7 @@
                   href="https://3cplusnow.com/pt/cobranca/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-cobranca.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-cobranca.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -243,7 +243,7 @@
                   href="https://3cplusnow.com/pt/atendimento-e-suporte/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-atendimento-suporte.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-atendimento-suporte.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -265,7 +265,7 @@
                 <h3>3C Partner</h3>
                 <div class="card">
                   <div class="card-image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/3c-partners.png'; ?>" alt="Imagem 3c Partners" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/3c-partners.png'; ?>" alt="Imagem 3c Partners" />
                   </div>
                   <div class="card-title">
                     <h3>
@@ -274,7 +274,7 @@
                     </h3>
                   </div>
                   <div class="card-link">
-                    <a class="chevron-link" href="#">Seja um parceiro <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
+                    <a class="chevron-link" href="https://3cplusnow.com/pt/partner/">Seja um parceiro <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
                   </div>
                 </div>
               </div>
@@ -282,7 +282,7 @@
             </div>
             <div class="submenu-footer">
               <div class="submenu-footer_contact">
-                <a class="chevron-link" href="">Contate o suporte <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
+                <a class="chevron-link" href="https://help.3cplus.com.br/pt-BR/">Contate o suporte <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
               </div>
               <!-- <div class="submenu-footer_links">
                 <a href="">Atualização do produto</a>
@@ -308,7 +308,7 @@
                   href="https://3cplusnow.com/pt/blog/"
                   class="submenu-item" style="margin-top: 24px">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-blog.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-blog.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -323,7 +323,7 @@
                   href="https://3cplusnow.com/pt/materiais-gratuitos/"
                   class="submenu-item">
                   <div class="submenu-item_image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-aprenda.png'; ?>" alt="Icon" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-aprenda.png'; ?>" alt="Icon" />
                   </div>
                   <div class="submenu-item_content">
                     <div class="item-header">
@@ -351,7 +351,7 @@
                     <a href="">Gerador de link para o WhatsApp</a>
                   </div>
                   <div class="card-link">
-                    <a class="chevron-link" href="#">Ver todas<img width="18" height="18" src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
+                    <a class="chevron-link" href="#">Ver todas<img width="18" height="18" src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
                   </div>
                 </div>
               </div> -->
@@ -362,7 +362,7 @@
                 <h3>Instituto 3C</h3>
                 <div class="card">
                   <div class="card-image">
-                    <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/instituto-3c.png'; ?>" alt="imagem Instituto 3C" />
+                    <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/instituto-3c.png'; ?>" alt="imagem Instituto 3C" />
                   </div>
                   <div class="card-title">
                     <h3>
@@ -371,7 +371,7 @@
                     </h3>
                   </div>
                   <div class="card-link">
-                    <a class="chevron-link" href="https://instituto3c.com.br/">Saiba mais<img width="18" height="18" src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
+                    <a class="chevron-link" href="https://instituto3c.com.br/">Saiba mais<img width="18" height="18" src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
                   </div>
                 </div>
               </div>
@@ -379,7 +379,7 @@
             </div>
             <div class="submenu-footer">
               <div class="submenu-footer_contact">
-                <a class="chevron-link" href="">Contate o suporte <img width="18px" height="18px" src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
+                <a class="chevron-link" href="https://help.3cplus.com.br/pt-BR/">Contate o suporte <img width="18px" height="18px" src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/chevron.png'; ?>" alt="Icon" /></a>
               </div>
               <!-- <div class="submenu-footer_links">
                 <a href="">Atualização do produto</a>
@@ -478,7 +478,7 @@
 
     <div class="menu-buttons">
       <a target="_blank" href="https://app.3c.plus/" class="login">
-        <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-entrar.png'; ?>" alt="Icon" />
+        <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-entrar.png'; ?>" alt="Icon" />
         Entrar
       </a>
       <a onclick="isFormPresent()" class="demo">
@@ -542,15 +542,15 @@
 
               <div class="submenu-container-interno">
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/discador/">Discador Automático</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-pabx.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-pabx.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/pabx/">PABX</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-receptivo.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-receptivo.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/receptivo/">Receptivo</a>
                 </div>
               </div>
@@ -572,15 +572,15 @@
 
               <div class="submenu-container-interno">
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-sms.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-sms.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/sms/">SMS</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-omnichannel.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-omnichannel.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/omnichannel/">Omnichannel</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-chatbot.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-chatbot.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/chatbot/">Chatbot</a>
                 </div>
               </div>
@@ -602,7 +602,7 @@
 
               <div class="submenu-container-interno">
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-ia.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-ia.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/insights-ia/">Insights IA</a>
                 </div>
               </div>
@@ -627,15 +627,15 @@
                 class="submenu-container-interno submenu-open"
                 style="overflow: visible">
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-vendas.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-vendas.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/vendas/">Vendas</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-atendimento.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-atendimento.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/atendimento-e-suporte/">Atendimento e Suporte</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-partners.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-partners.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/partner/">3C Partner</a>
                 </div>
                 <!-- <div class="submenu-item_interno">
@@ -666,15 +666,15 @@
                 class="submenu-container-interno submenu-open"
                 style="overflow: visible">
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-blog.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-blog.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/blog/">Blog da 3C+</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-aprenda.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-aprenda.png'; ?>" alt="Icon" />
                   <a href="https://3cplusnow.com/pt/materiais-gratuitos/">Aprenda +</a>
                 </div>
                 <div class="submenu-item_interno">
-                  <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-instituto.png'; ?>" alt="Icon" />
+                  <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-instituto.png'; ?>" alt="Icon" />
                   <a href="https://instituto3c.com.br/">Instituto 3C</a>
                 </div>
                 <!-- <div class="submenu-item_interno">
@@ -696,7 +696,7 @@
         href="https://app.3c.plus/"
         class="login"
         style="color: #3057f2">
-        <img src="<?php echo plugin_dir_url(__DIR__) . 'megamenu/' . 'src/assets/icon-entrar.png'; ?>" alt="Icon" />
+        <img src="<?php echo plugin_dir_url(__DIR__) . '3c-mega-menu/' . 'src/assets/icon-entrar.png'; ?>" alt="Icon" />
         Entrar
       </a>
       <a onclick="isFormPresent()" class="demo">

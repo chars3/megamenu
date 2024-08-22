@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Plugin Name: Mega Menu 3C Plugin
+ * Plugin Name: 3C Mega Menu
  * Description: Um plugin de mega menu customizado.
  * Version: 1.0
  * Author: Charles
  * License: GPL2
+ * Text Domain: mega-menu-3c-plugin
  */
 
 if (!defined('ABSPATH')) {

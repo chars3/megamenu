@@ -114,6 +114,14 @@ function isFormPresent() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    var container = document.querySelector(".c-header-container");
+    if (window.scrollY > 0) {
+      container.classList.add("scrolled");
+    } else {
+      container.classList.remove("scrolled");
+    }
+  });
   const mobileMenuItems = document.querySelectorAll(
     ".c-nav-mobile .menu-mobile > li"
   );
